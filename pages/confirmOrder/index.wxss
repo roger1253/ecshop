@@ -1,0 +1,208 @@
+.address{
+  background: #FFFFFF;
+  height: 172rpx;
+  border-top: 1rpx solid #CACBCD;
+}
+/* 显示默认地址 */
+.has-address .address-info{
+  width: 630rpx;
+  margin-left: 30rpx;
+  margin-top: 29rpx;
+  font-size: 34rpx;
+  color: #000000;
+  overflow: hidden;
+}
+.has-address .address-info view{
+  overflow: hidden;
+  margin-bottom: 6rpx;
+}
+.has-address .address-info view text{
+  margin-right: 20rpx;
+}
+.has-address .address-info .detail{
+  font-size: 26rpx;
+}
+.has-address .go-list{
+  margin-right: 30rpx;
+  margin-top: 74rpx;
+}
+.has-address .go-list image{
+  width: 16rpx;
+  height: 25rpx;
+}
+/* 不显示地址 */
+.empty-address{
+  padding: 0 30rpx;
+  line-height: 172rpx;
+  font-size: 32rpx;
+  color: #000000;
+}
+.empty-address text{
+  margin-left: 100rpx;
+}
+.empty-address image{
+  width: 16rpx;
+  height: 25rpx;
+  margin-top: 74rpx;
+}
+
+/* 商品列表 */
+.product-list{
+  background: #FFF;
+  margin: 20rpx 0;
+}
+.product-list .product-item{
+  height: 180rpx;
+  border-bottom: 1rpx solid #EFEFF4;
+}
+.product-list .product-item .image{
+  height: 100%;
+  width: 180rpx;
+}
+.product-list .product-item .image image{
+  height: 100%;
+  width: 100%;
+}
+.product-list .product-item .item-info{
+  margin: 17rpx 30rpx 0 20rpx;
+}
+.product-list .product-item .item-title{
+  width: 520rpx;
+  font-size: 28rpx;
+  color: #000000;
+  margin-bottom: 30rpx;
+  height: 80rpx;
+}
+.product-list .product-item .item-price{
+  font-size: 24rpx;
+  color: #292B2D;
+}
+.product-list .product-item .item-price .f-r{
+  color: #A2A6AD;
+}
+.product-list .product-item .item-amount{
+  color: #A2A6AD;
+}
+
+
+/* 快递，发票，红包 */
+.others{
+  background: #FFF;
+  margin-bottom: 20rpx;
+  padding-left:30rpx;
+}
+.others .express,.others .invoice,.others .cashgift{
+  height: 89rpx;
+  border-bottom: 1rpx solid #EFEFF4;
+  line-height: 89rpx;
+  box-sizing: border-box;
+}
+.others view.cashgift{
+  border-bottom: none;
+}
+.others view .name{
+  font-size: 32rpx;
+  color: #000;
+}
+.others view .content{
+  font-size: 26rpx;
+  color: #B2B2B2;
+}
+.others view .content image{
+  width: 16rpx;
+  height: 25rpx;
+  margin: 32rpx 30rpx 0 18rpx;
+}
+
+/* 买家留言 */
+.comment{
+  background: #FFFFFF;
+  height: 125rpx;
+  position: relative;
+  font-size: 32rpx;
+  color: #000;
+  padding: 20rpx 30rpx;
+  margin-bottom: 20rpx;
+}
+.comment .placeholder{
+  overflow: hidden;
+}
+.comment .placeholder .right{
+  color: #B2B2B2;
+}
+
+/* textarea不能用，input换行有问题 */
+.comment textarea{
+  width: 100%;
+  height: 100%;
+  /* padding-left: 120rpx; */
+  word-break:break-all;
+  word-wrap: break-word;
+}
+
+
+/* 订单总额 */
+.total-price{
+  margin-bottom: 122rpx;
+  background: #FFF;
+}
+.total-price .total{
+  font-size: 32rpx;
+  color: #000;
+  line-height: 80rpx;
+  margin-left: 30rpx;
+  padding-right: 30rpx;
+  height: 80rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.total-price .others-price{
+  height: 164rpx;
+  font-size: 26rpx;
+  color: #B2B2B2;
+  padding: 0 30rpx;
+}
+.total-price .others-price view{
+  overflow: hidden;
+  margin-bottom: 17rpx;
+}
+.total-price .others-price .product-price{
+  margin-top: 24rpx;
+}
+.total-price .others-price .cashgift-price{
+  margin-bottom: 27rpx;
+}
+
+/* 支付 */
+.payment{
+  height: 88rpx;
+  border-top: 1rpx solid #CACBCD;
+  width: 100%;
+  background: #FFF;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.payment .price-number{
+  width: 395rpx;
+  text-align: right;
+  padding-top: 8rpx;
+  padding-right: 15rpx;
+}
+.payment .price-number .pay-price{
+  font-size: 32rpx;
+  color: #000000;
+}
+.payment .price-number .sub-price{
+  font-size: 24rpx;
+  color: #B2B2B2;
+}
+.payment .go-pay{
+  width: 340rpx;
+  background: #1BB922;
+  color: #FFFFFF;
+  line-height: 88rpx;
+  height: 88rpx;
+  font-size: 34rpx;
+  text-align: center;
+}
+

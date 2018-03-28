@@ -1,0 +1,372 @@
+/**app.wxss**/
+@import "libs/wxParse/wxParse.wxss";
+page {
+  background-color: #EFEFF4;
+}
+.container {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+
+image{
+  vertical-align: top;
+}
+
+
+/* 背景色 */
+.bac-col-FFF{
+  background-color: #FFF;
+}
+
+/* 字体颜色 */
+.font-col-000000{
+  color: #000000;
+}
+.font-col-FFFFFF{
+  color: #FFFFFF;
+}
+.font-col-8E8E93{
+  color: #8E8E93;
+}
+.font-col-353535{
+  color: #353535;
+}
+.font-col-888888{
+  color: #888888;
+}
+.font-col-09BB07{
+  color: #09BB07;
+}
+.font-col-404245{
+  color: #404245;
+}
+.font-col-292B2D{
+  color: #292B2D;
+}
+.font-col-74767D{
+  color: #74767D;
+}
+.font-col-A2A6AD{
+  color: #A2A6AD;
+}
+.font-col-101010{
+  color: #101010;
+}
+.font-col-55595F{
+  color: #55595F;
+}
+
+
+/* 字体大小 */
+.font-30{
+  font-size: 30rpx;
+}
+.font-32{
+  font-size: 32rpx;
+}
+.font-28{
+  font-size: 28rpx;
+}
+.font-20{
+  font-size: 20rpx;
+}
+.font-42{
+  font-size: 42rpx;
+}
+.font-24{
+  font-size: 24rpx;
+}
+.font-26{
+  font-size: 26rpx;
+}
+
+/* 字体位置 */
+.tex-cen{
+  text-align: center;
+}
+
+/* margin */
+.m-l-10{
+  margin-left: 10px;
+}
+
+
+
+
+/* 定位 */
+.pos-rel{
+  position: relative;
+}
+.pos-abt{
+  position: absolute;
+}
+.f-l{
+  float: left;
+}
+.f-r{
+  float: right;
+}
+
+/* 边框 */
+.b-b-none{
+  border-bottom: none!important;
+}
+/* 空页面 */
+.blank-page{
+  text-align: center;
+  color: #55595F;
+  font-size: 34rpx;
+  margin-top: 400rpx;
+}
+
+/* 搜索 */
+.index-search{
+  height: 56rpx;
+  padding: 16rpx;
+  position: relative;
+  border-radius: 10rpx;
+}
+.index-search .placeholder text{
+  font-size: 30rpx;
+  color: #8E8E93;
+  vertical-align: middle;
+}
+.index-search .placeholder icon{
+  vertical-align: middle;
+}
+.index-search .placeholder.close{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+  padding-top: 10rpx;
+}
+.index-search input{
+  font-size: 30rpx;
+  color: #8E8E93;
+  border-radius: 10rpx;
+}
+.index-search input.close{
+  background: #FFFFFF;
+  height: 56rpx;
+  border: 1px solid #E6E6EA;
+  padding-left: 4px;
+
+}
+.index-search .cancel text{
+  color: #09BB07;
+  font-size: 30rpx;
+}
+.index-search .cancel.close{
+  display: none;
+}
+
+.index-search .placeholder.open{
+  display: none;
+}
+
+.index-search input.open{
+  background: #FFFFFF;
+  height: 56rpx;
+  border: 1px solid #E6E6EA;
+  display: inline-block;
+  width: 88%;
+  padding-left: 4px;
+}
+.index-search .cancel.open{
+  position: absolute;
+  right: 16rpx;
+  top: 50%;
+  transform: translate(0,-50%);
+  margin-left: 16rpx;
+}
+
+
+
+/* 列表 */
+.lists{
+  border-bottom: 1px solid #E2E2E2;
+  padding-bottom: 20px;
+  background: #FFFFFF;
+}
+
+view.text {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 40rpx 0 32rpx 20rpx;
+  color: #000000;
+}
+
+.line_y {
+  width: 4px;
+  height: 32rpx;
+  display: inline-block;
+  background-color: #000000;
+  margin-right: 16rpx;
+}
+
+.index-item{
+  padding-left: 2.5%;
+
+
+}
+.item {
+  margin-right: 2.5%;
+  width: 47.5%;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+}
+.item image{
+  height: 413rpx;
+  vertical-align: top;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+.item .desc{
+  height: 126rpx;
+  margin-top: 12rpx;
+  padding: 0 10rpx;
+  overflow: hidden;
+}
+.item .desc .title{
+  display: block;
+  height: 40rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  margin-bottom: 16rpx;
+  color: #353535;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+.item .desc .price{
+  line-height: 28rpx;
+  overflow: hidden;
+  float:  left;
+  color: #888888;
+  font-size: 28rpx;
+}
+.item .desc .sales{
+  color: #888888;
+  font-size: 20rpx;
+}
+
+
+/* 列表页tabbar切换 */
+.tabbar{
+  height: 60rpx;
+  padding: 28rpx 28rpx 20rpx 47rpx;
+  display: flex;
+  flex-direction: row;
+ /*  margin-bottom: 20rpx; */
+  font-size: 28rpx;
+  color: #000;
+  background: #FFF;
+}
+.tabbar view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  padding-bottom: 28rpx;
+}
+.tabbar view text{
+  opacity: 0.6;
+}
+.tabbar view.active{
+  border-bottom: 2px solid #000000;
+}
+.tabbar view.active text{
+  opacity: 1;
+}
+
+/* 保存按钮样式 */
+.save-edit{
+  padding: 0 30rpx;
+}
+.save-edit button{
+  height: 88rpx;
+  font-size: 36rpx;
+}
+.save-edit button.save{
+  color: #FFFFFF;
+  background: #404245;
+  margin-bottom: 20rpx;
+}
+.save-edit button.cancel{
+  color: #000;
+  background: #FBFAFC;
+}
+
+/* 使用帮助 */
+.helps{
+  padding-left: 30rpx;
+  border-top: 1rpx solid #E5E5E5;
+  border-bottom: 1rpx solid #E5E5E5;
+  background: #FFF;
+}
+.helps view{
+  height: 120rpx;
+  line-height: 120rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.helps view image.f-l{
+  height: 50rpx;
+  width: 50rpx;
+  margin-top: 35rpx;
+  margin-right: 24rpx;
+}
+.helps view image.f-r{
+  width: 16rpx;
+  height: 25rpx;
+  margin-top: 47rpx;
+  margin-right: 30rpx;
+}
+.helps view.help{
+  border: none;
+}
+
+
+/* 成功页面 */
+.success{
+  margin-bottom: 71rpx;
+  margin-top: 99rpx;
+}
+.success view{
+  text-align: center;
+}
+.success .img{
+  height: 100px;
+  margin-bottom: 50rpx;
+}
+.success .text1{
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 40rpx;
+  color: #000;
+  margin-bottom: 44rpx;
+}
+.success .text2{
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 28rpx;
+  color: #888;
+}
+
+.save-edit button.save{
+  background: #029400;
+}
+
+
+
+
+
+

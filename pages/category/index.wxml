@@ -1,0 +1,32 @@
+<view class="container">
+
+  <view class="section index-search">
+        <input class="{{inputValue ? 'open' : 'close'}}" bindinput="bindInput" bindblur='bindBlur' value='{{inputValue}}' type="text" bindconfirm='bindChange'/>
+        <view class="placeholder {{inputValue ? 'open' : 'close'}}">
+            <icon type="search" size="13"/>
+            <text class='m-l-10'>搜索</text>
+        </view>
+        <view class="cancel {{inputValue ? 'open' : 'close'}}" bindtap="tapCancel">
+            <text>取消</text>
+        </view>
+  </view>
+
+  <view class="menu-list">
+    <block wx:for-items="{{categories}}" wx:for-item="menuItem">
+      <view class="menu-item">
+        <view class="menu-item-main {{menuItem.opened ? 'open' : 'close'}}"  id="{{index}}" bindtap="tapMenuItem">
+          <text class="menu-item-name">{{menuItem.name}}</text>
+        </view>
+        <view class="menu-item-sub-list {{menuItem.opened ? 'open' : 'close'}}">
+          <block wx:for-items="{{menuItem.categories}}" wx:for-item="subItem" >
+
+              <view class="menu-item-sub-item"  id="{{index}}" bindtap="tapSubMenuItem">
+                  <text class="menu-item-sub-item-text-name">{{subItem.name}}</text>
+              </view>
+
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

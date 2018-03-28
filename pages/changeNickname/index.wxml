@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 修改昵称 -->
+  <view class="chang-nickname">
+    <input bindinput="nicknameInput" type="text" placeholder="请输入昵称" />
+  </view>
+
+  <view class="save-edit" bindtap="saveNickName">
+    <button class='save'>保存</button>
+  </view>
+</view>

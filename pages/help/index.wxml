@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="helps">
+    <navigator url='../helpDetail/index'>
+        <view>
+            <image class="f-l" src='../../image/e0_help.png'></image>
+            <text class="f-l">网店信息</text>
+            <image class="f-r" src='../../image/enter.png'></image>
+        </view>
+    </navigator>
+    <navigator url='../helpList/index'>
+        <view class="help">
+            <image class="f-l" src='../../image/e0_help.png'></image>
+            <text class="f-l">网店帮助分类</text>
+            <image class="f-r" src='../../image/enter.png'></image>
+        </view>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,101 @@
+/* 个人信息 */
+.mine-info{
+  height: 260rpx;
+}
+.mine-info .info-avatar{
+  width: 100%;
+  margin-top: 44rpx;
+  margin-bottom: 24rpx;
+  text-align: center;
+}
+.mine-info .info-avatar image{
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+}
+.mine-info .info-name{
+  text-align: center;
+  font-size: 34rpx;
+  color: #000000;
+}
+
+/* 订单信息 */
+.mine-order{
+  height: 240rpx;
+  background: #FFF;
+  border-top: 1rpx solid #E5E5E5;
+  border-bottom: 1rpx solid #E5E5E5;
+  margin-bottom: 32rpx;
+}
+.mine-order .order-nav{
+  height: 88rpx;
+  margin: 0 30rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+  line-height: 88rpx;
+}
+.mine-order .order-nav text.f-l{
+  font-size: 34rpx;
+  color: #000000;
+}
+.mine-order .order-nav text.f-r{
+  font-size: 26rpx;
+  color: #C0C3CA;
+}
+.mine-order .order-nav image{
+  width: 16rpx;
+  height: 25rpx;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+.mine-order .order-type{
+  display: flex;
+  flex-direction: row;
+  height: 153rpx;
+  font-size: 28rpx;
+  color: #000;
+}
+
+.mine-order .order-type view {
+  flex: 1;
+  flex-direction: column;
+}
+.mine-order .order-type view image{
+  height: 56rpx;
+  width: 56rpx;
+  margin-bottom: 16rpx;
+}
+.l-c-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 其他 */
+.mine-others{
+  background: #FFF;
+  border-top: 1rpx solid #E5E5E5;
+  border-bottom: 1rpx solid #E5E5E5;
+  color: #000;
+  font-size: 34rpx;
+  padding-left: 30rpx;
+}
+.mine-others view{
+  height: 88rpx;
+  line-height: 88rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.mine-others view image.f-l{
+  height: 58rpx;
+  width: 58rpx;
+  margin-top: 15rpx;
+  margin-right: 21rpx;
+}
+.mine-others view image.f-r{
+  width: 16rpx;
+  height: 25rpx;
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+}
+.mine-others view.cashgift{
+  border: none;
+}

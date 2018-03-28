@@ -1,0 +1,27 @@
+<view class="container">
+  <!-- 无可用红包时 -->
+  <view class="blank-page" wx-if='{{show}}'>
+    <text>您暂时没有可以使用的红包</text>
+  </view>
+  <!-- 有可用红包时 -->
+  <view class="cashgift" wx-if='{{!show}}'>
+    <block wx:for-items='{{cashgifts}}'>
+      <view class="gift-item" bindtap='selectTap' id='{{index}}'>
+        <view class="gift-num f-l">
+          <image src="../../image/d0_rmb.png"></image>
+          <text>{{item.value}}</text>
+        </view>
+        <view class="gift-info f-r">
+          <view class='select-icon'><icon type='success_no_circle' size='13' wx:if='{{item.iconShow}}' class='f-r'/></view>
+          <view><text class='f-r'>{{item.name}}</text></view>
+          <view><text class='f-r'>满{{item.condition}}元可使用</text></view>
+          <view><text class='f-r'>{{item.effective}}至{{item.expires}}</text></view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+    <view class="no-gift" bindtap='noUseCashgift'>
+      <text>不使用红包</text>
+    </view>
+</view>

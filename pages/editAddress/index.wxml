@@ -1,0 +1,54 @@
+<view class="container">
+  <form action="">
+    <view class="address-infos">
+      <view class="info-name">
+        <text>收货人</text>
+        <input type="text" placeholder='姓名' placeholder-class='placeholder' value='{{consignee.name}}' bindinput='bindNameInput' />
+      </view>
+      <view class="info-mobile">
+        <text>联系电话</text>
+        <input type="number" placeholder='手机或固话' placeholder-class='placeholder' value='{{consignee.mobile}}' bindinput='bindMobileInput' />
+      </view>
+      <view class="info-city">
+        <view class="province">
+          <picker mode='selector' bindchange="provincePickerChange" value="{{provinceIndex}}" range-key="name" range="{{provinceRegions}}">
+            <view class="city-content {{provinRegionName ? '' : 'placeholder'}}">{{provinRegionName || '省份'}}</view>
+
+          </picker>
+          <image src='../../image/enter.png'></image>
+        </view>
+        <view class="city">
+          <picker bindchange="cityPickerChange" value="{{cityIndex}}" range-key="name" range="{{cityRegions}}">
+            <view class="city-content {{cityRegionName ? '' : 'placeholder'}}">{{cityRegionName || '城市'}}</view>
+
+          </picker>
+          <image src='../../image/enter.png'></image>
+        </view>
+        <view class="district">
+          <picker bindchange="districtPickerChange" value="{{districtIndex}}" range-key="name" range="{{districtRegions}}">
+            <view class="city-content {{districtRegionName ? '' : 'placeholder'}}">{{districtRegionName || '区域'}}</view>
+
+          </picker>
+          <image src='../../image/enter.png'></image>
+        </view>
+
+      </view>
+      <view class="info-name">
+          <text>邮编</text>
+          <input type="number" placeholder='邮编地址' placeholder-class='placeholder' value='{{consignee.zip_code}}' bindinput='bindZipCodeInput' />
+      </view>
+      <view class="info-detail">
+        <text>详细地址</text>
+        <input type="text" placeholder='街道门牌信息' placeholder-class='placeholder' value='{{consignee.address}}' bindinput='bindAddressInput' />
+      </view>
+      <view wx:if="{{isModify}}" class="info-default">
+        <text>默认地址</text>
+        <icon type='{{imageName}}' size='23' class='f-r' bindtap='defaultTap'/>
+      </view>
+    </view>
+    <view class="save-edit">
+      <button bindtap='bindConsignee' class='save'>保存并使用</button>
+      <button bindtap='back' class='cancel'>取消</button>
+    </view>
+  </form>
+</view>

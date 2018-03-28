@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container product-list">
+
+    <!-- 列表 -->
+    <scroll-view class='scroll-view-item_H' scroll-y="true" bindscrolltolower="handleLoadMore">
+        <view class="tabbar">
+            <block wx:for-items="{{types}}">
+                <view class="{{item.active ? 'active' : ''}}" id='{{index}}' bindtap='tapSortWay'>
+                    <text>{{item.name}}</text>
+                </view>
+            </block>
+        </view>
+
+        <view class="section index-item">
+            <block wx:for-items="{{products}}">
+
+                <view class="item"  id="{{index}}" bindtap="tapProduct">
+                        <image src="{{item.default_photo.large}}" mode = "aspectFill"/>
+
+                        <view class='desc'>
+                            <text class="title">{{item.name}}</text>
+                            <text class="price">￥{{item.current_price}}</text>
+                            <text class="sales">{{item.sales_count}}人付款</text>
+                        </view>
+                </view>
+            </block>
+
+            <view class="tips">
+                <view wx:if="{{ hasMore }}">
+                    <image src="/image/loading.gif" mode="aspectFill"/>
+                    <text>玩了命的加载中...</text>
+                </view>
+                <view wx:else>
+                    <text>没有更多内容了</text>
+                </view>
+            </view>
+
+        </view>
+    </scroll-view>
+      <loading hidden="{{ !loading }}">加载中...</loading>
+</view>

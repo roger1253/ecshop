@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- 搜索 -->
+    <!-- <form action="" bindsubmit='bindSubmit'> -->
+     <form action="">
+        <view class="section index-search">
+                <input class="{{inputValue ? 'open' : 'close'}}" bindinput="bindInput" name='keyword' value='{{inputValue}}' type="text" bindconfirm="bindChange"/>
+                <view class="placeholder {{inputValue ? 'open' : 'close'}}">
+                    <icon type="search" size="13"/>
+                    <text class='m-l-10'>搜索</text>
+                </view>
+                <view class="cancel {{inputValue ? 'open' : 'close'}}" bindtap="tapCancel">
+                    <text>取消</text>
+                </view>
+        </view>
+        <!-- <view class="btn-area">
+                <button formType="submit">Submit</button>
+                <button formType="reset">Reset</button>
+        </view> -->
+     </form>
+
+
+    <!-- 列表 -->
+    <scroll-view class='scroll-view-item_H' scroll-y="true" bindscrolltolower="handleLoadMore">
+        <view class="tabbar">
+            <block wx:for-items="{{types}}">
+                <view class="{{item.active ? 'active' : ''}}" id='{{index}}' bindtap='tapSortWay'>
+                    <text>{{item.name}}</text>
+                </view>
+            </block>
+        </view>
+
+        <view class="section index-item bac-col-FFF">
+
+            <block wx:for-items="{{products}}">
+                <view class="item">
+                    <navigator url="../productDetail/index?pid={{item.id}}">
+                        <image src="{{item.default_photo.large}}" mode = "aspectFill"/>
+                        <view class='desc'>
+                            <text class="title">{{item.name}}</text>
+                            <text class="price">￥{{item.price}}</text>
+                            <text class="sales">{{item.sales_count}}人付款</text>
+                        </view>
+                    </navigator>
+                </view>
+            </block>
+
+            <view class="tips">
+                <view wx:if="{{ hasMore }}">
+                    <image src="/image/loading.gif" mode="aspectFill"/>
+                    <text>玩了命的加载中...</text>
+                </view>
+                <view wx:else>
+                    <text>没有更多内容了</text>
+                </view>
+            </view>
+
+
+
+        </view>
+    </scroll-view>
+    <loading hidden="{{ !loading }}">加载中...</loading>
+</view>

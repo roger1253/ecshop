@@ -1,0 +1,41 @@
+/* 个人信息 */
+
+.my-info{
+  padding-left: 30rpx;
+  border-top: 1rpx solid #E5E5E5;
+  border-bottom: 1rpx solid #E5E5E5;
+  background: #FFF;
+}
+.my-info view{
+  height: 120rpx;
+  line-height: 120rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+.my-info view image.f-r{
+  width: 16rpx;
+  height: 25rpx;
+  margin-top: 47rpx;
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+}
+.my-info .info-avatar{
+  height: 150rpx;
+  line-height: 150rpx;
+}
+.my-info .info-avatar image.f-r{
+  margin-top: 62rpx;
+}
+.my-info .info-avatar .avatar.f-r{
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 50%;
+  margin-top: 30rpx;
+}
+.my-info .info-gender{
+  border-bottom: none;
+}
+.my-info .info-password{
+  border-bottom: none;
+}
+

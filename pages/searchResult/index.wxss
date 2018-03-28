@@ -1,0 +1,31 @@
+
+.item .desc .sales{
+  line-height : 20rpx;
+  float: right;
+}
+
+.tips {
+	font-size: 28rpx;
+	text-align: center;
+	padding: 50rpx;
+	color: #ccc;
+}
+
+.tips text {
+	vertical-align: middle;
+}
+
+.tips image {
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 20rpx;
+	vertical-align: middle;
+}
+
+
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+    height: 1200rpx;
+}

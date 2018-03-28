@@ -1,0 +1,110 @@
+
+.tabbar{
+  margin-bottom: 0;
+  border-top: 1rpx solid #EFEFF4;
+}
+
+/* 订单列表 */
+.orders{
+  margin-top: 21rpx;
+  margin-bottom: 100rpx;
+}
+.order-item{
+  border-top: 1rpx solid #E5E5E5;
+  border-bottom: 1rpx solid #E5E5E5;
+  margin-bottom: 20rpx;
+  background: #FFF;
+  /* padding: 0 30rpx; */
+}
+.order-item .order-title{
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color: #000;
+}
+.order-item .order-title .f-l{
+  color: #C0C3CA;
+}
+.order-item .order-title image{
+  width: 16rpx;
+  height: 25rpx;
+  margin-top: 31rpx;
+  margin-left: 15rpx;
+}
+
+
+
+/* 商品列表 */
+.order-goods{
+  background: #FFF;
+  border-top: 1rpx solid #E5E5E5;
+}
+.order-goods .product-item{
+  height: 180rpx;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.order-goods .product-item .image{
+  height: 100%;
+  width: 180rpx;
+}
+.order-goods .product-item .image image{
+  height: 100%;
+  width: 100%;
+}
+.order-goods .product-item .item-info{
+  margin: 10rpx 0 0 20rpx;
+}
+.order-goods .product-item .item-title{
+  width: 490rpx;
+  font-size: 28rpx;
+  color: #000000;
+  margin-bottom: 54rpx;
+  height: 80rpx;
+}
+.order-goods .product-item .item-price{
+  width: 490rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  font-size: 24rpx;
+  color: #292B2D;
+  overflow: hidden;
+}
+.order-goods .product-item .item-price .f-r{
+  color: #A2A6AD;
+  width: 70%;
+  margin-left: 20rpx;
+  text-align: right;
+}
+
+/* 操作 */
+.order-operate{
+  height: 88rpx;
+  padding: 0 30rpx;
+  line-height: 88rpx;
+  font-size: 28rpx;
+}
+.order-operate button{
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  margin-top: 14rpx;
+  padding: 0;
+}
+.order-operate button.cancel.express{
+  width: 172rpx;
+}
+.order-operate button.pay.confirm{
+  width: 172rpx;
+}
+.order-operate button.cancel{
+  background: #F8F8F8;
+  color: #353535;
+  margin-right: 20rpx;
+}
+.order-operate button.pay{
+  background: #404245;
+  color: #FFF;
+}

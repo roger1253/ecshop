@@ -1,0 +1,28 @@
+
+.shipping{
+  background: #FFFFFF;
+  /* border-bottom: 1rpx solid #E5E5E5; */
+}
+.shipping .title{
+  height: 88rpx;
+  color: #888888;
+  font-size: 28rpx;
+  line-height: 88rpx;
+  background: #EFEFF4;
+  padding-left: 30rpx;
+}
+.shipping .shipping-item{
+  height: 88rpx;
+  margin-left: 30rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+  color: #000000;
+  font-size: 34rpx;
+}
+.shipping .shipping-item text{
+  line-height: 88rpx;
+  margin-right: 15rpx;
+}
+.shipping .shipping-item icon{
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}

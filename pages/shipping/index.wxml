@@ -1,0 +1,19 @@
+<view class="container">
+  <!-- 无配送方式时 -->
+  <view class="blank-page" wx-if='{{show}}'>
+    <text>暂不能选择配送方式</text>
+  </view>
+  <!-- 有配送方式时 -->
+  <view class="shipping" wx-if='{{!show}}'>
+    <view class="title">
+      <text>请选择配送方式</text>
+    </view>
+    <block wx:for-items='{{vendors}}'>
+      <view class="shipping-item {{index == vendors.length-1 ? 'b-b-none' :''}}" id='{{index}}' bindtap='selectTap'>
+        <text>{{item.name}}</text>
+        <text>￥{{item.fee}}</text>
+        <icon type='success_no_circle' size='13' wx:if='{{item.iconShow}}' class='f-r'/>
+      </view>
+    </block>
+  </view>
+</view>

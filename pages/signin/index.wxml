@@ -1,0 +1,21 @@
+<view class="container">
+<!--  <form action="">
+     <view class="login">
+      <view class="login-mobile">
+        <image class='login-mobile-icon' src="../../image/a0_user.png"></image>
+        <input type="text" placeholder='用户名/邮箱/手机号' placeholder-class='placeholder' value='{{inputUsername}}' bindinput='bindUsernameInput' />
+      </view>
+      <view class="login-password">
+        <image class='login-password-icon' src="../../image/a0_password.png"></image>
+        <input type="text" placeholder='请输入密码' placeholder-class='placeholder' value='{{inputPassword}}' bindinput='bindPasswordInput' />
+      </view>
+    </view> -->
+  <!--   <view class="save-edit" bindtap='tapSignin'>
+      <button class='save'>登录</button>
+    </view> 
+  </form>-->
+    <view class="wxa-auth" bindtap='tapWxaSignin'>
+    <image class='login-wxa-icon' src="../../image/a0_login_wechat.png" mode="aspectFit"></image>
+  </view>
+
+</view>

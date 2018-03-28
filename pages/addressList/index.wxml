@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="blank-page" wx:if='{{show}}'>
+    <text>您还没有添加收货地址</text>
+  </view>
+
+  <!-- 地址列表 -->
+  <view class="address-list" wx:if='{{!show}}'>
+    <block wx:for-items="{{items}}">
+      <view class="address-item" bindtap='selectTap' id='{{index}}'>
+        <view class="item-info">
+          <text>{{item.name}}</text>
+          <text>{{item.mobile}}</text>
+        </view>
+
+        <view class="item-detail">
+          <text>{{item.totalAddress}}</text>
+        </view>
+
+        <view class="item-operate">
+          <icon type='success_no_circle' class='f-l' size='13' wx:if='{{item.iconShow}}'/>
+          <button class='f-r edit' hover-class='none' bindtap="editTap" id='{{index}}'>编辑</button>
+          <button class='f-r delete' hover-class='none' bindtap='modalTap' id='{{index}}'>删除</button>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+
+<!-- 添加收货地址  -->
+<navigator url='../editAddress/index'>
+  <view class="add-address">
+    <text>添加收货地址</text>
+  </view>
+</navigator>
+
+<!-- 删除确认 -->
+<modal title="确认删除" confirm-text="确认" cancel-text="取消" hidden="{{modalHidden}}" bindconfirm="confirm" bindcancel="cancel">
+   <view class='tex-cen'>确认要删除该地址吗？</view>
+</modal>

@@ -1,0 +1,39 @@
+<view class="container">
+
+
+    <view class="tabbar">
+        <block wx:for-items="{{types}}">
+            <view class="{{item.active ? 'active' : ''}}" id='{{index}}' bindtap='tapGiftType'>
+                <text>{{item.name}}</text>
+            </view>
+        </block>
+    </view>
+
+    <!-- 无红包时 -->
+    <view class="blank-page" wx-if='{{show}}'>
+      <text>您暂时没有红包</text>
+    </view>
+    <!-- 有红包时 -->
+
+    <view class="cashgift" wx-if='{{!show}}'>
+      <block wx:for-items='{{cashgifts}}'>
+        <view class="gift-item {{item.status == '0' ? '' : 'unavailable'}}" >
+          <view class="gift-num f-l">
+            <!-- <span>￥</span> -->
+            <image src="{{item.status == '0' ? '../../image/d0_rmb.png' : '../../image/d0_rmb_gray.png'}}"></image>
+            <text>{{item.value}}</text>
+            <!-- <view  class="gift-num f-l" wx-if='{{showType}}'> -->
+            <text wx-if='{{showType}}' class='f-l gift-num-status'>{{item.status}}</text>
+            <!-- </view> -->
+          </view>
+          <view class="gift-info f-r {{item.status == '0' ? '' : 'unavailable'}}">
+            <view class='select-icon'></view>
+            <view><text class='f-r'>{{item.name}}</text></view>
+            <view><text class='f-r'>满{{item.condition}}元可使用</text></view>
+            <view><text class='f-r'>{{item.effective}}至{{item.expires}}</text></view>
+          </view>
+        </view>
+      </block>
+    </view>
+
+</view>

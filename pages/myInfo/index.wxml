@@ -1,0 +1,47 @@
+<view class="container">
+  <view class="my-info">
+ <!--    <view class="info-avatar" bindtap="avatarActionSheetTap">
+        <text class="f-l">更换头像</text>
+        <image class="f-r" src='../../image/enter.png'></image>
+        <image class="f-r avatar" src='../../image/e0_order_pay.png'></image>
+    </view> -->
+
+    <navigator url='../changeNickname/index'>
+      <view class="info-nickname">
+          <text class="f-l">修改昵称</text>
+          <image class="f-r" src='../../image/enter.png'></image>
+          <text class="f-r">{{showName}}</text>
+      </view>
+    </navigator>
+
+    <view class="info-gender" bindtap="genderActionSheetTap">
+        <text class="f-l">性别</text>
+        <image class="f-r" src='../../image/enter.png'></image>
+        <text class="f-r">{{userInfo.gender}}</text>
+    </view>
+
+    <!-- <view class="info-password">
+        <text class="f-l">修改密码</text>
+        <image class="f-r" src='../../image/enter.png'></image>
+    </view> -->
+
+  </view>
+<!-- 
+  <action-sheet hidden="{{avatarActionSheetHidden}}" bindchange="avatarActionSheetChange" >
+
+    <block wx:for-items="{{avatarActionSheetItems}}" >
+        <action-sheet-item >{{item}}</action-sheet-item>
+    </block> -->
+    <!--自动隐藏action-sheet-->
+<!--     <action-sheet-cancel>取消</action-sheet-cancel>
+  </action-sheet> -->
+
+  <action-sheet hidden="{{genderActionSheetHidden}}" bindchange="genderActionSheetChange"  >
+
+    <block wx:for-items="{{genderActionSheetItems}}"  >
+        <action-sheet-cancel id="{{index}}" bindtap="selectGradle">{{item}}</action-sheet-cancel>
+    </block>
+    <!--自动隐藏action-sheet-->
+    <action-sheet-cancel>取消</action-sheet-cancel>
+  </action-sheet>
+</view>

@@ -1,0 +1,57 @@
+<view class="container">
+  <view class="invoice">
+    <!-- 发票类型 -->
+  <!--   <view class="invoice-type">
+      <text class='f-l'>发票类型</text>
+      <text class='f-r'>电子发票</text>
+    </view>
+ -->
+  <view class="invoice-info" wx-if="{{show}}">
+      <text>发票类型</text>
+  </view>
+    <view class="invoice-title" wx-if="{{show}}" >
+      <block wx:for-items='{{types}}'>
+        <view class="title-item {{index == types.length-1 ? 'b-b-none' :''}}" bindtap='typeTap' id='{{index}}'>
+          <text class='f-l'>{{item.name}}</text>
+          <icon type='success_no_circle' size='13' wx:if='{{item.iconShow}}' class='f-r'/>
+        </view>
+      </block>
+    </view>
+
+
+    <!-- 发票抬头 -->
+    <view class="invoice-info">
+      <text>发票抬头</text>
+    </view>
+    <view class="invoice-title">
+      <block wx:for-items='{{titles}}'>
+        <view class="title-item {{index == titles.length-1 ? 'b-b-none' :''}}" bindtap='titleTap' id='{{index}}'>
+          <text class='f-l'>{{item.name}}</text>
+          <icon type='success_no_circle' size='13' wx:if='{{item.iconShow}}' class='f-r'/>
+        </view>
+      </block>
+    </view>
+
+    <view class="company-name" wx-if='{{companyShow}}'>
+      <input type="text" value="{{invoiceTitle}}" placeholder-class="placeholder" bindinput="bindTitle"/>
+    </view>
+    <!-- 发票明细 -->
+    <view class="invoice-info">
+      <text>发票明细</text>
+    </view>
+    <view class="invoice-detail">
+      <block wx:for-items='{{content}}'>
+        <view class="detail-item {{index == content.length-1 ? 'b-b-none' :''}}" bindtap='detailTap' id='{{index}}'>
+          <text class='f-l'>{{item.name}}</text>
+          <icon type='success_no_circle' size='13' wx:if='{{item.iconShow}}' class='f-r'/>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 保存选择 -->
+  <view class="save-edit invoice-save-edit">
+      <button class='save f-l' bindtap="saveTap">确认</button>
+      <button class='cancel f-r' bindtap="cancelTap">不要发票</button>
+    </view>
+</view>

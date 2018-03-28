@@ -1,0 +1,18 @@
+<view class="container">
+  <!-- 无帮助时 -->
+    <view class="blank-page" wx-if='{{show}}'>
+      <text>暂时无帮助列表</text>
+    </view>
+
+
+<!-- 有帮助 -->
+  <view class="helps" wx-if='{{!show}}'>
+    <block wx:for-items='{{articles}}'>
+        <view class="{{index == articles.length-1 ? 'b-b-none' :''}}" bindtap="selectArticle"  id='{{index}}'>
+            <image class="f-l" src='../../image/e0_help.png'></image>
+            <text class="f-l">{{item.title}}</text>
+            <image class="f-r" src='../../image/enter.png'></image>
+        </view>
+    </block>
+  </view>
+</view>

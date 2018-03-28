@@ -1,0 +1,18 @@
+.help-detail{
+  background: #FFF;
+  padding: 50rpx 30rpx;
+  color: #404245;
+  font-size: 28rpx;
+  border-top: 1rpx solid #E5E5E5;
+  padding-top: 0;
+}
+.help-detail .title{
+  font-size: 34rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  margin: 20rpx 0;
+  margin-bottom: 0;
+}
+.help-detail .items .item-info text{
+  line-height: 36rpx;
+}

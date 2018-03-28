@@ -1,0 +1,100 @@
+<loading hidden="{{!loading}}">
+  加载中...
+</loading>
+<view class="container">
+  <!-- 搜索 -->
+  <form action="" bindsubmit='bindSubmit'>
+    <view class='search-bar'>
+      <view class="section index-search">
+
+        <input class="{{inputValue ? 'open' : 'close'}}" bindinput="bindInput" name='keyword' value='{{inputValue}}' type="text" bindconfirm='bindChange' bindblur='bindBlur' />
+        <view class="placeholder {{inputValue ? 'open' : 'close'}}">
+          <icon type="search" size="13" />
+          <text class='m-l-10'>搜索</text>
+        </view>
+        <view class="cancel {{inputValue ? 'open' : 'close'}}" bindtap="tapCancel">
+          <text>取消</text>
+        </view>
+      </view>
+      <view class="scan" bindtap='onScan'>
+        <image src="../../image/scan.png"></image>
+        <text>扫一扫</text>
+      </view>
+    </view>
+    <!-- <view class="btn-area">
+                <button formType="submit">Submit</button>
+                <button formType="reset">Reset</button>
+        </view> -->
+  </form>
+
+  <!-- 轮播 -->
+  <!-- <view class="mask" wx-if="{{inputValue}}">
+
+    </view> -->
+  <view class="section section_gap swiper_box">
+    <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+      <block wx:for-items="{{banners}}">
+        <swiper-item>
+          <image src="{{item.photo.large}}" class="slide-image" mode="aspectFill" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 列表 -->
+  <view class='lists'>
+    <view class="text font-32" wx-if="{{products.good_products.length}}">
+      <view class="line_y"></view>
+      <text>推荐商品</text>
+    </view>
+
+    <view class="section index-item">
+      <block wx:for-items="{{products.good_products}}">
+        <view class="item" id="{{item.id}}" bindtap="tapProduct">
+          <image src="{{item.default_photo.large}}" mode="aspectFill" />
+          <view class='desc'>
+            <text class="title font-col-353535 font-28">{{item.name}}</text>
+            <text class="price font-col-888888 font-28">￥{{item.current_price}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+
+    <view class="text font-32" wx-if="{{products.hot_products.length}}">
+      <view class="line_y"></view>
+      <text>热销商品</text>
+    </view>
+
+    <view class="section index-item">
+      <block wx:for-items="{{products.hot_products}}">
+        <view class="item" id="{{item.id}}" bindtap="tapProduct">
+
+          <image src="{{item.default_photo.large}}" mode="aspectFill" />
+          <view class='desc'>
+            <text class="title font-col-353535 font-28">{{item.name}}</text>
+            <text class="price font-col-888888 font-28">￥{{item.current_price}}</text>
+          </view>
+
+        </view>
+      </block>
+    </view>
+
+    <view class="text font-32" wx-if="{{products.recently_products.length}}">
+      <view class="line_y"></view>
+      <text>最新商品</text>
+    </view>
+
+    <view class="section index-item">
+      <block wx:for-items="{{products.recently_products}}">
+        <view class="item" id="{{item.id}}" bindtap="tapProduct">
+          <image src="{{item.default_photo.large}}" mode="aspectFill" />
+          <view class='desc'>
+            <text class="title font-col-353535 font-28">{{item.name}}</text>
+            <text class="price font-col-888888 font-28">￥{{item.current_price}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

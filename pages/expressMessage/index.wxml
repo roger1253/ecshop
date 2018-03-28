@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="expressMessage">
+    <!-- 快递公司及单号 -->
+    <view class="basic-info">
+      <view class="info-name">
+        <text class='f-l'>快递公司</text>
+        <text class='f-r'>{{vendor_name}}</text>
+      </view>
+      <view class="info-code">
+        <text class='f-l'>快递单号</text>
+        <text class='f-r'>{{code}}</text>
+      </view>
+    </view>
+
+    <view class="detail-title">
+      <text>物流明细</text>
+    </view>
+
+    <view class="express-detail">
+      <block wx:for-items="{{status}}">
+        <view class="{{item.is_last ? 'mess-now' : 'mess-before'}}">
+          <text class="mess">{{item.content}}</text>
+          <text class="time">{{item.datetime}}</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,74 @@
+.address-infos{
+  border-top: 1rpx solid #E5E5E5;
+  border-bottom: 1rpx solid #E5E5E5;
+  background: #FFF;
+  padding-left: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.address-infos view{
+  height: 88rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+  line-height: 88rpx;
+  padding-right: 30rpx;
+  overflow: hidden;
+}
+.address-infos .info-city image{
+  width: 16rpx;
+  height: 25rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+}
+.address-infos .info-city{
+  padding: 0;
+}
+.address-infos .info-city view{
+  width: 33%;
+  display: inline-block;
+  border-bottom: none;
+  border-right: 1rpx solid #E5E5E5;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.address-infos .info-city view.city-content{
+  width: 80%;
+  border-right: none;
+  margin-left: 10rpx;
+}
+.address-infos .info-city view.district{
+  border: none;
+}
+.address-infos .info-default{
+  border: none;
+}
+.address-infos .info-detail{
+  height: 150rpx;
+}
+.address-infos .info-default icon{
+  margin-top: 20rpx;
+}
+/* .address-infos .info-detail input{
+  height: 150rpx;
+} */
+.address-infos view text{
+  color: #000000;
+  font-size: 34rpx;
+  width: 25%;
+  margin-right: 35rpx;
+  display: inline-block;
+  float: left;
+}
+.address-infos view input{
+  display: inline-block;
+  height: 88rpx;
+  width: 70%;
+  font-size: 34rpx;
+}
+.placeholder{
+  color: #B2B2B2;
+  font-size: 34rpx;
+}
+
+

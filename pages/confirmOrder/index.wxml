@@ -1,0 +1,140 @@
+<view class="container">
+
+  <!-- 地址 -->
+  <view bindtap = "pushAddressList" class='address'>
+  <!-- 地址为空的时候 -->
+
+    <view class="empty-address" wx:if='{{!showAddress}}'>
+      <text class='f-l'>您还没有收货地址，点击这里添加</text>
+      <image class='f-r' src='../../image/enter.png'></image>
+    </view>
+
+
+  <!-- 地址不为空的时候 -->
+
+    <view class="has-address" wx:if='{{showAddress}}'>
+      <view class="address-info f-l">
+        <view>
+          <text>{{defaultAddress.name}}</text>
+          <text>{{defaultAddress.mobile}}</text>
+        </view>
+        <text class='detail'>{{defaultAddress.totalAddress}}</text>
+      </view>
+      <view class="go-list f-r">
+        <image src='../../image/enter.png'></image>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 结算商品列表 -->
+  <view class="product-list">
+    <block wx:for-items="{{goods}}">
+      <view class="product-item">
+        <!-- 商品图片 -->
+        <view class="image f-l">
+          <image src="{{item.product.default_photo.large}}"/>
+        </view>
+        <!-- 商品信息 -->
+        <view class="item-info f-l">
+          <view class="item-title">
+            <text>{{item.product.name}}</text>
+          </view>
+          <view class="item-price">
+            <text class='f-l'>￥{{item.price}}</text>
+            <text class='f-r'>{{item.properties}}</text>
+            <text class='f-r item-amount'>x{{item.amount}}</text>
+          </view>
+        </view>
+
+      </view>
+    </block>
+  </view>
+
+
+  <!-- 快递，发票，红包 -->
+  <view class="others">
+    <!-- 快递 -->
+    <view class="express" bindtap = "touchShipping">
+        <view class="name f-l">
+          <text>配送方式</text>
+        </view>
+        <view class="content f-r">
+          <image class='f-r' src='../../image/enter.png'></image>
+          <text class='f-r'>{{shipping.name}}</text>
+        </view>
+    </view>
+    <!-- 发票 -->
+    <navigator url="../invoice/index?invoiceType={{invoiceType.name}}&invoiceContent={{invoiceContent.name}}&invoiceTitle={{invoiceTitle}}" wx-if='{{showInvoice}}'>
+      <view class="invoice">
+        <view class="name f-l">
+          <text>发票内容</text>
+        </view>
+        <view class="content f-r">
+          <image class='f-r' src='../../image/enter.png'></image>
+          <text class='f-r'>{{noInvoice == true? "不要发票" : invoiceContent.name|| "请选择发票内容"}}</text>
+        </view>
+      </view>
+    </navigator>
+    <!-- 红包 -->
+    <navigator url='../cashgift/index?total_price={{order_price.total_price}}' wx:if="{{showCashgift}}">
+      <view class="cashgift">
+        <view class="name f-l">
+          <text>使用红包</text>
+        </view>
+        <view class="content f-r">
+          <image class='f-r' src='../../image/enter.png'></image>
+          <text class='f-r'>{{cashgiftDesc}}</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+
+  <!-- 留言 -->
+  <view class="comment">
+    <view class="placeholder {{comment ? 'hide' : ''}}">
+      <text class='f-l'>买家留言</text>
+      <text class='f-r right'>您可以给卖家留言</text>
+    </view>
+    <textarea value="{{comment}}"/>
+  </view>
+
+  <!-- 总额 -->
+  <view class="total-price">
+    <view class="total">
+      <text class='f-l'>订单总额</text>
+      <text class='f-r'>￥{{order_price.total_price}}</text>
+    </view>
+    <view class="others-price">
+      <view class="product-price">
+        <text class='f-l'>商品总额</text>
+        <text class='f-r'>￥{{order_price.product_price}}</text>
+      </view>
+      <view class="express-price">
+        <text class='f-l'>运费金额</text>
+        <text class='f-r'>￥{{order_price.shipping_price}}</text>
+      </view>
+      <view class="cashgift-price">
+        <text class='f-l'>商家红包</text>
+        <text class='f-r'>￥{{merchantCashgift}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="payment">
+  <view class="price-number f-l">
+    <view class="pay-price">
+      <text>￥{{order_price.total_price}}</text>
+    </view>
+    <view class="sub-price">
+      <text>已优惠￥{{all_discount}}</text>
+    </view>
+  </view>
+
+    <view class="go-pay f-r" bindtap="touchSubmit">
+      <text>提交订单并支付</text>
+    </view>
+
+</view>

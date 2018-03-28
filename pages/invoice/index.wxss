@@ -1,0 +1,64 @@
+.invoice{
+  margin: 20rpx 0;
+}
+/* 类型  抬头 明细*/
+.invoice-type,.invoice-title,.invoice-detail{
+  border-top: 1rpx solid #D9D9D9;
+  border-bottom: 1rpx solid #D9D9D9;
+  padding-left: 30rpx;
+  background: #FFF;
+}
+.company-name{
+  height: 88rpx;
+  border-bottom: 1rpx solid #D9D9D9;
+  padding-right: 30rpx;
+  background: #FFF;
+}
+.company-name input{
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 34rpx;
+  padding-left: 30rpx;
+}
+.placeholder{
+  font-size: 34rpx;
+  color: #B2B2B2;
+}
+
+.invoice-type,.invoice-title .title-item,.invoice-detail .detail-item{
+  height: 88rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+.invoice-type text,.invoice-title text,.invoice-detail text{
+  line-height: 88rpx;
+  font-size: 34rpx;
+  color: #000;
+}
+.invoice-title icon,.invoice-detail icon{
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}
+.invoice-type .f-r{
+  color: #888888;
+  margin-right: 30rpx;
+}
+/* 标题 */
+.invoice-info{
+  height: 88rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+}
+.invoice-info text{
+  line-height: 88rpx;
+}
+.invoice-save-edit{
+  vertical-align: top;
+  margin-bottom: 88rpx;
+}
+.invoice-save-edit button{
+  width: 47%;
+  display: inline-block;
+}
+

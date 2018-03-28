@@ -1,0 +1,28 @@
+.success{
+  margin-bottom: 71rpx;
+  margin-top: 99rpx;
+}
+.success view{
+  text-align: center;
+}
+.success .img{
+  height: 100px;
+  margin-bottom: 50rpx;
+}
+.success .text1{
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 40rpx;
+  color: #000;
+  margin-bottom: 44rpx;
+}
+.success .text2{
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 28rpx;
+  color: #888;
+}
+
+.save-edit button.save{
+  background: #029400;
+}

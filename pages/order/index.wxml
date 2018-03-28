@@ -1,0 +1,75 @@
+<view class="container">
+    <view class="tabbar">
+        <block wx:for-items="{{types}}">
+            <view class="{{item.active ? 'active' : ''}}" id='{{index}}' bindtap='tapOrderType'>
+                <text>{{item.name}}</text>
+            </view>
+        </block>
+    </view>
+
+    <!-- 无订单时 -->
+    <view class="blank-page" wx-if='{{show}}'>
+      <text>您的订单为空</text>
+    </view>
+
+    <!-- 有订单时 -->
+    <view class="orders">
+        <block wx:for-items="{{orders}}" wx:for-item="order">
+            <view class="order-item">
+                <view class="order-title" id='{{index}}' bindtap='pushOrderDetailTap'>
+                    <text class='f-l'>共{{order.total_goods}}件商品</text>
+                    <image class="f-r" src='../../image/enter.png'></image>
+                    <text class="f-r">{{order.typeTitle}}</text>
+                </view>
+                <view class="order-goods">
+                    <block wx:for-items="{{order.goods}}">
+                      <view class="product-item">
+                        <!-- 商品图片 -->
+                        <view class="image f-l">
+                          <image src="{{item.product.photos[0].thumb}}"/>
+                        </view>
+                        <!-- 商品信息 -->
+                        <view class="item-info f-l">
+                          <view class="item-title">
+                            <text>{{item.product.name}}</text>
+                          </view>
+                          <view class="item-price">
+                            <text class='f-l'>￥{{item.product_price}}</text>
+                            <text class='f-r'>x{{item.total_amount}}  {{item.property}}</text>
+                          </view>
+                        </view>
+
+                      </view>
+                    </block>
+                </view>
+
+                <view class="order-operate">
+                    <view class="f-l">
+                        <text>合计：￥{{order.total}}</text>
+                    </view>
+                    <view class="f-r" wx:if="{{order.status == 0 || order.status == 2 || order.status == 3 || order.status == 4 }}">
+                        <view class="f-r">
+                            <button hover-class='none' class='pay f-r' bindtap='payTap' id='{{index}}' wx:if="{{order.status == 0}}">付款</button>
+                            <button hover-class='none' class='pay confirm f-r' bindtap='receiptTap' id='{{index}}' wx:if="{{order.status == 2}}">确认收货</button>
+                            <!--<button hover-class='none' class='pay f-r' bindtap='evaluateTap' wx:if="{{order.status == 3}}">评价</button>-->
+                        </view>
+                        <view class="f-r">
+                            <button hover-class='none' class='cancel f-r' wx:if="{{order.status == 0}}" id='{{index}}' bindtap='cancelOrderTap'>取消</button>
+                            <button hover-class='none' class='cancel express f-r' id='{{index}}' bindtap='expressMessage' wx:else>查看物流</button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
+
+<!-- 取消订单确认 -->
+<modal title="是否要取消订单" confirm-text="是" cancel-text="否" hidden="{{orderModal}}" bindconfirm="orderYes" bindcancel="orderNo">
+   <view class='tex-cen'>确认要取消这个订单吗？</view>
+</modal>
+
+<!-- 确认收货确认 -->
+<modal title="是否要确认收货" confirm-text="是" cancel-text="否" hidden="{{receiptModal}}" bindconfirm="receiptYes" bindcancel="receiptNo">
+   <view class='tex-cen'>确认收货后，卖家将会收到你的货款</view>
+</modal>

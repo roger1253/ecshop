@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 个人信息 -->
+  <view class="mine-info">
+    <view class="info-avatar" bindtap='pushMyInfo'>
+      <!-- {{item.status == '0' ? '../../image/d0_rmb.png' : '../../image/d0_rmb_gray.png'}} -->
+      <image src="{{userAvatarUrl ?  userAvatarUrl : '../../image/e0_head.png'}}"></image>
+    </view>
+    <view class="info-name" bindtap="pushMyInfo">
+      <text>{{showName}}</text>
+    </view>
+  </view>
+
+  <!-- 个人订单 -->
+  <view class="mine-order">
+    <view class="order-nav" bindtap='pushAllOrderList'>
+      <text class='f-l'>我的订单</text>
+      <image src='../../image/enter.png' class='f-r'></image>
+      <text class='f-r'>查看全部订单</text>
+    </view>
+
+    <view class="order-type">
+      <view class="l-c-c" bindtap='pushOrderListCreated'>
+        <image src="../../image/e0_order_pay.png"/>
+        <text>待付款</text>
+      </view>
+
+      <view class="l-c-c" bindtap='pushOrderListPaid'>
+        <image src="../../image/e0_order_deliver.png"/>
+        <text>待发货</text>
+      </view>
+
+      <view class="l-c-c" bindtap='pushOrderListDelivering'>
+        <image src="../../image/e0_order_goods.png"/>
+        <text>待收货</text>
+      </view>
+    </view>
+  </view>
+  <!-- 其他 -->
+  <view class="mine-others">
+    <navigator url='../addressList/index?isProfile=true'>
+      <view class="address">
+        <image class="f-l" src='../../image/e0_address.png'></image>
+        <text class="f-l">收货地址</text>
+        <image class="f-r" src='../../image/enter.png'></image>
+      </view>
+    </navigator>
+    <navigator url='../cashgiftList/index' wx:if="{{showCashgift}}">
+      <view class="cashgift">
+        <image class="f-l" src='../../image/e0_bonus.png'></image>
+        <text class="f-l">我的红包</text>
+        <image class="f-r" src='../../image/enter.png'></image>
+      </view>
+    </navigator>
+    <!-- <navigator url='../helpList/index'>
+      <view class="help">
+        <image class="f-l" src='../../image/e0_help.png'></image>
+        <text class="f-l">使用帮助</text>
+        <image class="f-r" src='../../image/enter.png'></image>
+      </view>
+    </navigator> -->
+   <!--  <navigator url='../signin/index'>
+      <view class="help">
+        <image class="f-l" src='../../image/e0_help.png'></image>
+        <text class="f-l">登录</text>
+        <image class="f-r" src='../../image/enter.png'></image>
+      </view>
+    </navigator> -->
+  </view>
+</view>

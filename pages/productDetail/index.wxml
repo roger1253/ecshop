@@ -1,0 +1,103 @@
+<!--index.wxml-->
+<import src="../../libs/wxParse/wxParse.wxml" />
+<view class="container">
+  <!-- 轮播 -->
+  <view class="section section_gap swiper_box">
+    <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+      <block wx:for-items="{{product.photos}}">
+        <swiper-item>
+          <image src="{{item.large}}" class="slide-image" mode="aspectFill" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 商品描述 -->
+  <view class="product-info">
+    <view class="info">
+      <text>{{product.name}}</text>
+    </view>
+    <view class="price">
+      <text class='now-price'>￥{{product.current_price}}</text>
+      <text class='old-price pos-rel'>￥{{product.price}}</text>
+    </view>
+    <view class="promo" wx:if="{{isPromos}}">
+      <text class='promo-text'>{{promos}}</text>
+    </view>
+  </view>
+
+  <!-- 商品属性 -->
+  <view class="product-property">
+    <block wx:for-items="{{product.properties}}" wx:for-item="property">
+      <view class="property pos-rel">
+        <view class="property-name">
+          <view class='pos-abt'>
+            <text>{{property.name}}</text>
+            <text wx:if="{{property.is_multiselect}}">(可多选)</text>
+          </view>
+        </view>
+
+        <view class="property-values {{index == product.properties.length-1 ? 'b-b-none' :''}}">
+          <block wx:for-items="{{property.attrs}}">
+            <view class="property-value {{item.selected ? 'selected' : ''}} {{item.noClick ? 'noClick' : ''}}" id='{{index}}' data-obj='{{property.name}}' bindtap='propertyTap'>
+              <text>{{item.attr_name}}{{item.attr_price ? '（ 加 ¥ ' + item.attr_price + ' ）' : ''}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 购买数量 -->
+  <view class="number">
+    <view class="number-text f-l">
+      <text>数量</text>
+    </view>
+    <view class="number-operate f-l">
+      <image src='{{productAmount > 1 ? "../../image/b2_minus.png" : "../../image/b2_minus_dis.png"}}' class="sub" bindtap="tapSub"></image>
+      <input type="number" value='{{productAmount}}' bindinput='bindInput' />
+      <image src='../../image/b2_plus.png' class="add" bindtap="tapAdd"></image>
+    </view>
+  </view>
+
+
+  <!-- 商品详情 -->
+  <view class="product-detail">
+    <view class="detail-tab">
+      <view>
+        <text>商品介绍</text>
+      </view>
+    </view>
+    <view class="detail-image" wx:if="{{tabs[0].active}}">
+      <template is="wxParse" data="{{wxParseData:goods_desc.nodes}}" />
+    </view>
+    <view class="detail-info" wx:if="{{tabs[1].active}}">
+      <block wx:for-items="{{params}}">
+        <view class='param-item pos-rel {{index == params.length-1 ? "b-b-none" :""}}'>
+          <view class='param-name'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='param-desc pos-abt'>
+            <text>{{item.desc}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<view class="add-cart">
+
+  <view class="cart pos-rel" bindtap="touchCart">
+    <image src='../../image/b2_cart.png'></image>
+    <span class='pos-abt {{cartAmount > 99 ? "add" : ""}}' wx:if="cartAmount > 0">{{cartAmount > 99 ? "99+" : cartAmount}}</span>
+  </view>
+
+  <view class="add" bindtap='tapAddCart'>
+    <text>加入购物车</text>
+  </view>
+
+  <view class="buy-now" bindtap='tapBuyNow'>
+    <text>立即购买</text>
+  </view>
+</view>

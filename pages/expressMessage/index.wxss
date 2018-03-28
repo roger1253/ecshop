@@ -1,0 +1,54 @@
+.expressMessage{
+  margin-top: 20rpx;
+}
+.basic-info{
+  background: #FFF;
+  border-top: 1rpx solid #E5E5E5;
+  border-bottom: 1rpx solid #E5E5E5;
+  padding-left: 30rpx;
+}
+.basic-info view{
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.basic-info view .f-l{
+  color: #404245;
+  font-size: 34rpx;
+}
+.basic-info view .f-r{
+  color: #888888;
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+.basic-info view.info-name{
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+.detail-title{
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #888888;
+  font-size: 28rpx;
+  padding-left: 30rpx;
+}
+.express-detail{
+  padding: 20rpx 0 10rpx 35rpx;
+  background: #FFF;
+  color: #888888;
+}
+.express-detail view{
+  margin-bottom: 30rpx;
+}
+.express-detail view.mess-now{
+  color: #404245;
+}
+.express-detail view text{
+  display: block;
+}
+.express-detail view .mess{
+  font-size: 34rpx;
+  margin-bottom: 9rpx;
+}
+.express-detail view .time{
+  font-size: 26rpx;
+}

@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="blank-page" wx:if='{{show}}'>
+    <text>您的购物车还是空的</text>
+  </view>
+
+  <view class='cart-product' wx:if='{{!show}}'>
+    <block wx:for-items="{{goods_groups[0].goods}}">
+      <view class="cart-item">
+        <view class="select f-l">
+          <!-- <icon type="{{item.type == '' ? circle : item.type}}" id='{{index}}' size="23" bindtap='tapSelect'/> -->
+          <icon type="{{item.type}}" id='{{index}}' size="23" bindtap='tapSelect'/>
+        </view>
+        <view class="image f-l">
+          <image src="{{item.product.default_photo.large}}" mode = "aspectFill"/>
+        </view>
+        <view class="item-info f-l">
+          <view class="title">
+            <text>{{item.product.name}}</text>
+          </view>
+          <view class="property">
+            <text>{{item.property}}</text>
+            <image src='../../image/d0_del.png' bindtap="modalTap" id='{{index}}'></image>
+          </view>
+          <view class="price">
+            <text>￥{{item.price}}</text>
+            <view class="amount f-r">
+              <view>
+                <image src='{{item.amount > 1 ? "../../image/c0_minus.png" : "../../image/c0_minus_dis.png"}}' id='{{index}}' class="sub" bindtap="tapSub"></image>
+              </view>
+              <text class='amount-number font-col-101010 font-32'>{{item.amount}}</text>
+                <!-- <input type="text" value='{{item.amount}}' id='{{index}}' class='font-col-101010 font-32' bindinput='bindInput' /> -->
+              <view>
+                <image src='../../image/c0_plus.png' class="add" id='{{index}}' bindtap="tapAdd"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!-- 结算 -->
+<view class="pay" wx:if='{{!show}}'>
+  <view class="select-all f-l">
+    <icon type="{{type}}" class='f-l' size="23" bindtap='selectAll'/>
+    <text class='f-l'>全选</text>
+    <text class='delete f-l' bindtap='modalTapAll'>删除</text>
+  </view>
+  
+    <view class="go-pay f-r" bindtap="touchConfirmOrder">
+      <text>结算（{{totalAmount}}）</text>
+    </view>
+  
+  <view class="price-all f-r">
+    <text>￥{{totalPrice}}</text>
+  </view>
+</view>
+
+
+<!-- 单个删除确认 -->
+<modal title="确认删除" confirm-text="确认" cancel-text="取消" hidden="{{modalHidden}}" bindconfirm="confirm" bindcancel="cancel">
+   <view class='tex-cen'>确认要删除这个商品吗？</view>
+</modal>
+
+<!-- 多个删除确认 -->
+<modal title="确认删除" confirm-text="确认" cancel-text="取消" hidden="{{modalHiddenAll}}" bindconfirm="confirmAll" bindcancel="cancelAll">
+   <view class='tex-cen'>确认要删除选中商品吗？</view>
+</modal>
+

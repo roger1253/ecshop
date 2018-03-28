@@ -1,0 +1,10 @@
+.chang-nickname input{
+  height: 100rpx;
+  background: #FFF;
+  padding-left: 40rpx;
+  margin-bottom: 70rpx;
+  border-top: 1px solid #C2C6CA;
+  border-bottom: 1px solid #C2C6CA;
+  color: #404245;
+  font-size: 28rpx;
+}
